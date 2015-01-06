@@ -9,6 +9,10 @@ Po zaimportowaniu pliku txt ( jako csv z nagłówkiem id i word ) , wystarczy ur
 ```js
 mongoimport -c words -d nosql--file K:\mongoBaza\words.csv --type csv --headerline
 ```
+Czas: Pomijalnie mały.
+
+
+Uruchamiamy mapreduce: [LINK](https://github.com/jcimoch/noSQL-Egzamin/blob/master/mongoAnagrams.js)
 
 ```js
 {

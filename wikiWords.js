@@ -9,8 +9,13 @@ var map = function(){
 var reduce = function(key, value){
                         return value.length;
              };
- 
+
+  var finalize = function(key, value){
+                        var notANumber = isNaN(value);
+                        return notANumber?1:parseInt(value);
+                }
+                 
                          
-res = t.mapReduce( map, reduce,  {out: 'wiki.out'});
+res = t.mapReduce( map, reduce,  {out: 'wiki.out',finalize: finalize});
 
 db.wiki.out.find();
