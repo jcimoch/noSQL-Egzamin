@@ -131,6 +131,13 @@ Czas: ~10min
 
 Uruchamiamy skrypt mapreduce [LINK](https://github.com/jcimoch/noSQL-Egzamin/blob/master/wikiWords.js)
 
+| drive type|      time     | 
+|----------|:-------------:|
+| hdd |  ~5h| 
+| ssd |  ~1h 20min   | 
+
+![alt text](https://dl.dropboxusercontent.com/u/15067146/hddusagemapreduce.PNG "hdd and ram usage")
+
 
 ```js
 {
