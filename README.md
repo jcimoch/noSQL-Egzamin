@@ -115,7 +115,7 @@ W tym zadaniu okazało się, że zaimportowanie pliku xml do mongo nie będzie z
 Uruchamiamy skrypt [LINK](https://github.com/jcimoch/noSQL-Egzamin/blob/master/parsexml.js)
 W którym wyłuskujemy tylko id artykułu oraz tekst. Oczysczamy dane ze znaków specjalnych i innych śmieci. Reszta danych jest zbędna do zadania. 
 
-| Tables   |      node.js      | 
+| lang   |      time     | 
 |----------|:-------------:|
 | node.js |  ~36min | 
 | java |   ~7min   |  
@@ -125,6 +125,88 @@ W którym wyłuskujemy tylko id artykułu oraz tekst. Oczysczamy dane ze znaków
 Wykonujemy import nowego pliku json. Warto tutaj wspomnieć, że ten sam program napisany w JAVIE przez kolege z wykorzystaniem SAX wykonał się 4x szybciej. Łatwo wywnioskować, że node.js do zadań wymagających dużo od procesora nie jest najlepszym wyborem. 
 
  ```js
-	mongoimport --file K:\mongobaza\output.json --type json --jsonArray 
+	mongoimport -c wiki -d nosql --file K:\mongobaza\output.json --type json --jsonArray 
  ```
+Czas: ~10min
 
+Uruchamiamy skrypt mapreduce [LINK](https://github.com/jcimoch/noSQL-Egzamin/blob/master/wikiWords.js)
+
+
+```js
+{
+    "result" : "wiki.out",
+    "timeMillis" : 26472252,
+    "counts" : {
+        "input" : 1671883,
+        "emit" : 520337162,
+        "reduce" : 63187424,
+        "output" : 5429884
+    },
+```
+```js
+db['wiki.out'].find().sort({value:-1}).limit(10);
+```
+
+10 najczęstszych słów z artykułów:
+
+```js
+/* 0 */
+{
+    "_id" : "urodził",
+    "value" : 5382
+}
+
+/* 1 */
+{
+    "_id" : "sześć",
+    "value" : 5352
+}
+
+/* 2 */
+{
+    "_id" : "Urodził",
+    "value" : 5342
+}
+
+/* 3 */
+{
+    "_id" : "ukończeniu",
+    "value" : 5307
+}
+
+/* 4 */
+{
+    "_id" : "Dwa",
+    "value" : 5261
+}
+
+/* 5 */
+{
+    "_id" : "rodzinie",
+    "value" : 5261
+}
+
+/* 6 */
+{
+    "_id" : "przebywał",
+    "value" : 5254
+}
+
+/* 7 */
+{
+    "_id" : "założył",
+    "value" : 5246
+}
+
+/* 8 */
+{
+    "_id" : "pozostał",
+    "value" : 5234
+}
+
+/* 9 */
+{
+    "_id" : "powrocie",
+    "value" : 5229
+}
+```
