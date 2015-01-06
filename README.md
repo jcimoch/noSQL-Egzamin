@@ -115,6 +115,13 @@ W tym zadaniu okazało się, że zaimportowanie pliku xml do mongo nie będzie z
 Uruchamiamy skrypt [LINK](https://github.com/jcimoch/noSQL-Egzamin/blob/master/parsexml.js)
 W którym wyłuskujemy tylko id artykułu oraz tekst. Oczysczamy dane ze znaków specjalnych i innych śmieci. Reszta danych jest zbędna do zadania. 
 
+| Tables   |      node.js      | 
+|----------|:-------------:|
+| node.js |  ~36min | 
+| java |   ~7min   |  
+
+    
+
 Wykonujemy import nowego pliku json. Warto tutaj wspomnieć, że ten sam program napisany w JAVIE przez kolege z wykorzystaniem SAX wykonał się 4x szybciej. Łatwo wywnioskować, że node.js do zadań wymagających dużo od procesora nie jest najlepszym wyborem. 
 
  ```js
