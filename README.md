@@ -117,8 +117,8 @@ W którym wyłuskujemy tylko id artykułu oraz tekst. Oczysczamy dane ze znaków
 
 | lang   |      time     | 
 |----------|:-------------:|
-| node.js |  ~36min | 
-| java |   ~7min   |  
+| node.js |  ~32min | 
+| java |   ~8min   |  
 
     
 
