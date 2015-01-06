@@ -11,6 +11,83 @@ mongoimport -c words -d nosql--file K:\mongoBaza\words.csv --type csv --headerli
 ```
 Anagramów jest: 914
 
+Przykładowe 10: 
+
+```js
+db['letters.out'].find({value:{$type:2}}).sort({id:-1})
+
+```
+
+```js
+/* 0 */
+{
+    "_id" : "a,a,b,d,o,r",
+    "value" : "abroad,aboard"
+}
+
+/* 1 */
+{
+    "_id" : "a,a,b,l,s,t",
+    "value" : "basalt,tablas"
+}
+
+/* 2 */
+{
+    "_id" : "a,a,b,m,n,t",
+    "value" : "bantam,batman"
+}
+
+/* 3 */
+{
+    "_id" : "a,a,c,e,t,v",
+    "value" : "caveat,vacate"
+}
+
+/* 4 */
+{
+    "_id" : "a,a,c,i,m,n",
+    "value" : "caiman,maniac"
+}
+
+/* 5 */
+{
+    "_id" : "a,a,c,l,r,s",
+    "value" : "rascal,scalar"
+}
+
+/* 6 */
+{
+    "_id" : "a,a,c,l,s,u",
+    "value" : "casual,causal"
+}
+
+/* 7 */
+{
+    "_id" : "a,b,i,n,r,s",
+    "value" : "bairns,brains"
+}
+
+/* 8 */
+{
+    "_id" : "a,b,i,n,r,y",
+    "value" : "binary,brainy"
+}
+
+/* 9 */
+{
+    "_id" : "a,b,m,r,s,u",
+    "value" : "umbras,rumbas"
+}
+
+/* 10 */
+{
+    "_id" : "a,b,n,o,r,y",
+    "value" : "barony,baryon"
+}
+
+```
+
+
  **Zadanie 3b:**
 >- Wyszukają najczęściej występujące słowa z Wikipedia data PL aktualny plik z artykułami, ok. 1.3 GB
 
