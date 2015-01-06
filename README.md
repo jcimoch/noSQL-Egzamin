@@ -111,3 +111,13 @@ db['letters.out'].find({value:{$type:2}}).sort({id:-1})
 >- Wyszukają najczęściej występujące słowa z Wikipedia data PL aktualny plik z artykułami, ok. 1.3 GB
 
 W tym zadaniu okazało się, że zaimportowanie pliku xml do mongo nie będzie zadaniem trywialnym. Postanowiłem sparsować plik i przerobić na interesujący mnie .json. Do tego celu użyłem node.js oraz modułu SAX ( moduły takie jak xml2js nie nadawały się do tego zadania ze względu na rozmiar pliku ). 
+
+Uruchamiamy skrypt [LINK](https://github.com/jcimoch/noSQL-Egzamin/blob/master/parsexml.js)
+W którym wyłuskujemy tylko id artykułu oraz tekst. Oczysczamy dane ze znaków specjalnych i innych śmieci. Reszta danych jest zbędna do zadania. 
+
+Wykonujemy import nowego pliku json. Warto tutaj wspomnieć, że ten sam program napisany w JAVIE przez kolege z wykorzystaniem SAX wykonał się 4x szybciej. Łatwo wywnioskować, że node.js do zadań wymagających dużo od procesora nie jest najlepszym wyborem. 
+
+ ```js
+	mongoimport --file K:\mongobaza\output.json --type json --jsonArray 
+ ```
+
