@@ -9,6 +9,21 @@ Po zaimportowaniu pliku txt ( jako csv z nagłówkiem id i word ) , wystarczy ur
 ```js
 mongoimport -c words -d nosql--file K:\mongoBaza\words.csv --type csv --headerline
 ```
+
+```js
+{
+    "result" : "letters.out",
+    "timeMillis" : 384,
+    "counts" : {
+        "input" : 8199,
+        "emit" : 8199,
+        "reduce" : 914,
+        "output" : 7011
+    },
+...
+
+```
+
 Anagramów jest: 914
 
 Przykładowe 10: 
