@@ -1,3 +1,15 @@
+<h3> **Hardware:**
+ 
+```
+Desktop:
+CPU Core i7 4770K @ 4.5Ghz
+RAM 16 GB DDR3 1600Mhz CL10
+SSD Plextor M5S 250mb/s SATA 3
+HDD 1TB Seagate 64mb cache 7200rpm
+```
+----------
+
+
 Rozwiązania zadań na egzamin:
 -------------
  **Zadanie 3a:**
