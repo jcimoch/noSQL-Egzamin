@@ -229,3 +229,55 @@ db['wiki.out'].find().sort({value:-1}).limit(10);
     "value" : 5229
 }
 ```
+
+Jak łatwo zauważyć wyniki są podejrzanie małe, co ciekawe pokrywają się z wynikami w parserze SAX w implementacji javowej. Aby je zweryfikować postanowiłem użyć jeszcze pasera napisanego w php. 
+Wyniki z tego parsera są kompletnie odmienne ale jednocześnie nie do końca poprawne, ponieważ parser ten uwzględnia cały tekst, łącznie z tagami np. "span", "bgcolor" , "www" . Przez co wyniki są zakłamane w drugą stronę.
+
+```
+db['wiki.out'].count()
+5441098
+db.pr.find({value: {$gt: 100}}).sort({value: -1})
+{ "_id" : "w", "value" : 13318251 }
+{ "_id" : "i", "value" : 5673827 }
+{ "_id" : "align", "value" : 4910631 }
+{ "_id" : "–", "value" : 4812528 }
+{ "_id" : "na", "value" : 4483914 }
+{ "_id" : "z", "value" : 4411273 }
+{ "_id" : "ref", "value" : 4264212 }
+{ "_id" : "data", "value" : 3495151 }
+{ "_id" : "Kategoria", "value" : 3169246 }
+{ "_id" : "do", "value" : 2823615 }
+{ "_id" : "center", "value" : 2719307 }
+{ "_id" : "się", "value" : 2571716 }
+{ "_id" : "http", "value" : 2324475 }
+{ "_id" : "br", "value" : 2221204 }
+{ "_id" : "W", "value" : 2072932 }
+{ "_id" : "www", "value" : 2053453 }
+{ "_id" : "left", "value" : 2037762 }
+{ "_id" : "tytuł", "value" : 1668387 }
+{ "_id" : "roku", "value" : 1511654 }
+{ "_id" : "small", "value" : 1466680 }
+{ "_id" : "a", "value" : 1449271 }
+{ "_id" : "style", "value" : 1432662 }
+{ "_id" : "bgcolor", "value" : 1400557 }
+{ "_id" : "flaga", "value" : 1370419 }
+{ "_id" : "px", "value" : 1339655 }
+{ "_id" : "nie", "value" : 1290672 }
+{ "_id" : "r", "value" : 1286691 }
+{ "_id" : "RD", "value" : 1275575 }
+{ "_id" : "jest", "value" : 1260071 }
+{ "_id" : "pl", "value" : 1235733 }
+{ "_id" : "name", "value" : 1098228 }
+{ "_id" : "o", "value" : 1077834 }
+{ "_id" : "język", "value" : 1059868 }
+{ "_id" : "nazwa", "value" : 1056992 }
+{ "_id" : "Plik", "value" : 1023572 }
+{ "_id" : "to", "value" : 1021988 }
+{ "_id" : "przez", "value" : 1010958 }
+{ "_id" : "url", "value" : 1005558 }
+{ "_id" : "infobox", "value" : 995637 }
+{ "_id" : "span", "value" : 991489 }
+
+```
+
+![alt text](https://dl.dropboxusercontent.com/u/15067146/words.PNG "words chart")
