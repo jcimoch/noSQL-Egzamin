@@ -234,6 +234,7 @@ Jak łatwo zauważyć wyniki są podejrzanie małe, co ciekawe pokrywają się z
 Wyniki z tego parsera są kompletnie odmienne ale jednocześnie nie do końca poprawne, ponieważ parser ten uwzględnia cały tekst, łącznie z tagami np. "span", "bgcolor" , "www" . Przez co wyniki są zakłamane w drugą stronę.
 
 skrypt wykonywał się znacznie dłużej niż implementacja w js czy javie
+
 | lang   |      time     | 
 |----------|:-------------:|
 | php |  ~58min | 
