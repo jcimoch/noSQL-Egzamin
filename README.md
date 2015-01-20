@@ -243,7 +243,7 @@ skrypt wykonywał się znacznie dłużej niż implementacja w js czy javie
 ```js
 db['wiki.out'].count()
 5441098
-db.pr.find({value: {$gt: 100}}).sort({value: -1})
+db['wiki.out'].find({value: {$gt: 100}}).sort({value: -1})
 { "_id" : "w", "value" : 13318251 }
 { "_id" : "i", "value" : 5673827 }
 { "_id" : "align", "value" : 4910631 }
