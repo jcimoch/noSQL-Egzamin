@@ -233,7 +233,13 @@ db['wiki.out'].find().sort({value:-1}).limit(10);
 Jak łatwo zauważyć wyniki są podejrzanie małe, co ciekawe pokrywają się z wynikami w parserze SAX w implementacji javowej. Aby je zweryfikować postanowiłem użyć jeszcze pasera napisanego w php. 
 Wyniki z tego parsera są kompletnie odmienne ale jednocześnie nie do końca poprawne, ponieważ parser ten uwzględnia cały tekst, łącznie z tagami np. "span", "bgcolor" , "www" . Przez co wyniki są zakłamane w drugą stronę.
 
-```
+skrypt wykonywał się znacznie dłużej niż implementacja w js czy javie
+| lang   |      time     | 
+|----------|:-------------:|
+| php |  ~58min | 
+
+
+```js
 db['wiki.out'].count()
 5441098
 db.pr.find({value: {$gt: 100}}).sort({value: -1})
